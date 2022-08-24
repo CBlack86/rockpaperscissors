@@ -20,28 +20,59 @@ let uInput = userInput.toLowerCase()
 console.log (uInput)
 //compare input values
 
-function playRound() {
+function playRound(comChoice, uInput) {
    if (comChoice === uInput) {
     return tie
    } 
    else if (uInput === "rock" && comChoice === "scissors") {
+    userScore++
     return playerWinRound
-   }
+    }
    else if (uInput === "paper" && comChoice === "rock") {
+    userScore++
     return playerWinRound
-   }
+    }
    else if (uInput === "scissors" && comChoice === "paper") {
+    userScore++
     return playerWinRound
-   }
+    }
    else {
+    comScore++
     return computerWinRound
-   }
+    }
 }
 
-console.log (playRound(comChoice, uInput))
+//console.log (playRound(comChoice, uInput))
+//console.log ("Your Score is: " + userScore)
+//console.log ("Computer Score is: " + comScore)
 
+for(var i=0;i<5;i++){
+    let uInput = prompt("Please select rock, paper, or scissors: ");
+    let comChoice = getComputerChoice()
+    console.log (comChoice)
+    console.log (uInput)
+    console.log("your score = " + userScore);
+    console.log("Computer's score = " + comScore);
+  }
+//function endGame() {
+//    if (userScore > comScore) {
+//        console.log (playerWin)
+//    }
+//    else {
+//        console.log (computerWin)
+//    }
+//}
 
-
+//function game() {
+//   console.log(playRound());
+//    if (userScore < 3 && comScore < 3) {
+//        game();
+//    }
+//    else {
+//        endGame();
+//    }
+//}
+    
 
 //now keep track of wins for computer and user
 
